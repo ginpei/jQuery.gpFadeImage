@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+
+<!-- JavaScriptのサンプルコードは下の方にあります。 -->
+
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery.gpFadeImage</title>
+  <style type="text/css">
+body {
+    font-family: "Times", "Times New Roman", serif;
+}
+pre {
+    background-color: #fffff0;
+    border: ridge 2px;
+    display: inline-block;
+    font-family: 'Courier', 'Courier New', monospace;
+    padding: 1em;
+}
+img {
+  border-style: none;
+}
+
+#cover {
+  height: 500px;
+  margin: 50px auto;
+  position: relative;
+  text-align: center;
+  width: 500px;
+}
+#cover a {
+  color: gray;
+  font: 12px "Lucida Sans", "Hiragino Kaku Gothic Pro", Meiryo, "MS PGothic", Osaka;
+  text-decoration: none;
+}
+#cover-overlay {
+  background-color: #fff;
+  display: none;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+  </style>
+</head>
+<body>
+  <div id="main">
+    <div id="cover">
+      <a href="http://mofblanc.com/">
+        <img id="cover-image" src="img/20111211-mofbranc-01-01.jpeg" width="500" height="500" alt="" />
+        <div id="cover-overlay">
+          <img src="http://mofblanc.com/wp-content/themes/bee/images/logo.png" width="321" height="52" alt="mofblanc" />
+          <br />
+          もふもふした、やわらかなタッチのイラスト素材無料配布サイト「モフブラン」
+        </div>
+      </a>
+    </div>
+  </div>
+  <div>
+    <script src="jquery-1.7.1.min.js"></script>
+    <script src="../jquery.gpfadeimage-1.0.js"></script>
+    <script>
+(function() {
+  // テキストを表示
+  $('#cover').hover(function(event) {
+    $('#cover-overlay')
+      .stop()
+      .fadeTo(500, 0.9);
+  }, function(event) {
+    $('#cover-overlay')
+      .stop()
+      .fadeTo(500, 0);
+  });
+
+  // 画像をローテーション
+  $('#cover-image').gpFadeImage([
+    'img/20111211-mofbranc-02-01.jpeg',
+    'img/20111218-mofblanc-01-01.jpeg',
+    'img/20111224-mofblanc01-01.jpeg '
+  ]);
+}());
+    </script>
+  </div>
+</body>
+</html>

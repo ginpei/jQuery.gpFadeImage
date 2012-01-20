@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+
+<!-- There are JavaScript sample codes in bottom. -->
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery.gpFadeImage</title>
+  <style type="text/css">
+body {
+    font-family: "Times", "Times New Roman", serif;
+}
+pre {
+    background-color: #fffff0;
+    border: ridge 2px;
+    display: inline-block;
+    font-family: 'Courier', 'Courier New', monospace;
+    padding: 1em;
+}
+img {
+  border-style: none;
+}
+
+#img {
+  margin: 50px 0;
+  text-align: center;
+}
+#img a .gpfadeimage-wrapper {
+  border: double 3px transparent;
+}
+#img a:hover .gpfadeimage-wrapper {
+  border-color: #00f;
+}
+  </style>
+</head>
+<body>
+  <h1>jQuery.gpFadeImage</h1>
+  <div id="main">
+    <p>The plugin that change images with fade effect.</p>
+    <p>for: IE 6+, Firefox, Chrome, Safari, Opera</p>
+    <p>
+      <pre>$(elem).gpFadeImage([
+  'image02.jpg',
+  'image03.jpg',
+  'image04.jpg'
+]);</pre>
+    </p>
+    <p>
+      See sample codes in HTML source,<br />
+      and more informations in: <a href="http://ginpen.com/jquery/gpfadeimage/">Ginpen.com</a>.
+    </p>
+    <p id="img"><img id="myimg" src="img/20111211-mofbranc-01-01.jpeg" width="500" height="500" alt="" /></p>
+    <p>
+      These sample images are from <a href="http://mofblanc.com/">http://mofblanc.com/</a>
+    </p>
+  </div>
+  <div>
+    <script src="jquery-1.7.1.min.js"></script>
+    <script src="../jquery.gpfadeimage-1.0.js"></script>
+    <script>
+(function() {
+  $('#myimg').gpFadeImage([
+    'img/20111211-mofbranc-02-01.jpeg',
+    'img/20111218-mofblanc-01-01.jpeg',
+    'img/20111224-mofblanc01-01.jpeg '
+    ]);
+}());
+    </script>
+  </div>
+</body>
+</html>
